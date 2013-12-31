@@ -2,7 +2,7 @@ front-end-development-standards
 ===============================
 
 ## Coding Standards
-Some of these are conventions that can be open to interpretation based on preference but will be followed as part of this project, others are just best practices called out and noted here. The developer should be familiar with best practices in general as this is not meant to be an ehaustive list.
+Some of these are conventions based on preference and will be followed as part of my project, others are just best practices called out and noted here. The developer should be familiar with best practices in general as this is not meant to be an exhaustive list.
 
 ### General
 Spaces not tabs. Two of them per tab. Make sure your editor is configured properly. Why?
