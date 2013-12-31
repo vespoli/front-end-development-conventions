@@ -153,7 +153,7 @@ TODO: Provide references to jQuery performance best practices (even better show 
 `$(‘.foo’)` vs `$(‘.foo’).eq(0)` vs $`(‘.foo:first’)`
 
 ### Browser Testing and Support
-All code developed for the front end production should be developed for and tested with the following device/OS/browser combinations
+All code developed for the front end production should be developed for and tested with the following device/OS/browser combinations. This is just a baseline and may change from project to project
 
 Mac/OSX/Chrome, Firefox, Safari(6.x *)
 
