@@ -10,12 +10,12 @@ Spaces not tabs. Two of them per tab. Make sure your editor is configured proper
 - **Chuck Norris** uses spaces. Two of them.
 - You don't want to look like an amateur do you?
 - View compression - You can see more
-- Transference - That code block you just ripped from the stack overflow is spaces
+- Transference - That code block you just ripped from the stack overflow... spaces
 - JADE hates tabs + spaces - Dont piss off JADE or it'll be a bad day
 
 ### JADE
 
-Components should all be div's. No need to be explicit with div so lead with the components class name. Let the caller of the component figure out what the semantics are. Dont wrap components in things like `section` or `aside`. Where it makes sense use elements like `header`s and `footer`s insde the component, but not just for the sake of it.
+Components containers should usually be generic div's. This way they are more flexible to be contained in an element that will provide further semantic meaning depending on how they are used. No need to be explicit with div so lead with the components class name. Let the caller of the component figure out what the semantics are. Dont wrap components in things like `section` or `aside`. Where it makes sense use elements like `header`s and `footer`s insde the component, but not just for the sake of it.
 
 **Bad**
 
@@ -68,7 +68,7 @@ As much as possible, use parent containers to hook into child elements.
 #### Compass
 Use the compass utility to make any declarations that require vendor prefixes. This allows us to keep the prefixes up to date as we update compass.
 #### Breakpoint
-All media specific declarations should be made using breakpoint. *Most* declarations should use a global SASS variable like `$screen--large` or `$screen-medium`. Occasionally you will need to declare non standard breaks to accomodate a specific scenario but should otherwise be avoided
+All media specific declarations should be made using breakpoint. *Most* declarations should use a global SASS variable like `$screen-large` or `$screen-medium`. Occasionally you will need to declare non standard breaks to accomodate a specific scenario but should otherwise be avoided
 #### Nesting
 Don't go overboard with SASS nesting. It leads to inefficient, bloated and more difficultly overridden code. Component specific styles should however always be namespaces in their component by nesting them in the component container.
 
@@ -128,8 +128,8 @@ Don't go overboard with SASS nesting. It leads to inefficient, bloated and more 
 #### Naming Conventions
 Variables and method names should be lower camelCase. Only classes should use upper CamelCase.
 
-    var yourMomma = new WM.YourMoma();
-    yourMomma.layOnGuildTrip();
+    var yourMomma = new FOO.YourMoma();
+    yourMomma.layOnGuiltTrip();
 
 jQuery object variables should always be preceded by `$` ie:
 
