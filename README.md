@@ -137,7 +137,7 @@ jQuery object variables should always be preceded by `$` ie:
 
     
 #### Namespace
-All code for this application will live under the “WM” namespace which is initialized in /src/js/app.js along with any global utility functions that are part of the application.
+All JavaScript code for your application should live under your applications namespace which is initialized in /src/js/app.js along with any global utility functions that are part of the application. Use something short like the initials of the project.
 
 #### jQuery vs Backbone listeners
 Except in specific scenarios, event listeners should be attached as part of a view’s event object and not via a traditional jQuery event listener. 
@@ -162,7 +162,7 @@ iPad 4/iOS 6/Safari
 Samsung/Android 4.3/Galaxy S4
 
 PC/Windows 8/IE10  
-PC/Windows 7/Chrome, Firefox, IE8, IE9
+PC/Windows 7/Chrome, Firefox, IE9
 
 -All browsers and OS except where specified are latest non beta release
 
