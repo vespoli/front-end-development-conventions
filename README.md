@@ -123,6 +123,27 @@ Don't go overboard with SASS nesting. It leads to inefficient, bloated and more 
         h1{font-family: $sans-serif;}
         a{color:green;}
     }
+    
+#### Structure Vs. Semantic
+Don't mix structural containers (grid elements) and semantic ones. Also, grid classes should never have additional classes to be used as "hooks"
+
+**Very Bad**
+
+    aside.my-cool-component.col-lg-4
+
+**Bad**
+
+    aside.col-lg-4
+    .col-lg-4.right-column
+    .col-lg-8.main-content
+
+**Good**
+
+    .col-lg-4
+        aside.my-cool-component
+  
+    .col-lg-8
+        main
 
 ### JavaScript
 #### Naming Conventions
