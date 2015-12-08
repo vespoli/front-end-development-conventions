@@ -1,10 +1,10 @@
 Front End Development - Conventions
 ===============================
 
-## Coding Standards
-A collection of conventions, some based on preference, others are generally accepted best practices. The developer should be familiar with best practices in general as this is not meant to be an exhaustive list.
+## What is this?
+A collection of conventions, some based on preference, others are generally accepted best practices. They are meant to provide a guideline for developers which they should adhere to, in order to maximize consistancy of team development. The developer should be familiar with best practices in general as this is not meant to be an exhaustive list.
 
-### General
+### Tabs or spaces?
 Spaces not tabs. Two of them per tab. Make sure your editor is configured properly. Why?
  
 - **Chuck Norris** uses spaces. Two of them.
@@ -12,6 +12,7 @@ Spaces not tabs. Two of them per tab. Make sure your editor is configured proper
 - View compression - You can see more
 - Transference - That code block you just ripped from the stack overflow... spaces
 - JADE hates tabs + spaces - Dont piss off JADE or it'll be a bad day
+- But seriously, this is really not important what a developer uses. But it IS important that everyone on a development team is consistant so please use 2 spaces.
 
 ### JADE
 
@@ -37,7 +38,7 @@ Components containers should usually be generic div's. This way they are more fl
         p.more
             a(href="#") Read More
         
-Be sparse with your tags. At the same time, use common sense. Don't over condense
+Be sparse with your tags but the same time, use common sense. Don't over condense.
 
 #### Structure Vs. Semantic
 Don't mix structural containers (grid elements) and semantic ones. Also, grid classes should never have additional classes to be used as "hooks"
