@@ -31,7 +31,7 @@ Components containers should usually be generic div's. This way they are more fl
         
 **Good**
 
-    .foo
+    aside.foo
         h1 This thing
         p Hi kids
         p.more
