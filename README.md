@@ -1,4 +1,4 @@
-front-end-development-standards
+Front End Development - Conventions
 ===============================
 
 ## Coding Standards
