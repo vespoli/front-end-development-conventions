@@ -15,6 +15,7 @@ Spaces not tabs. Two of them per tab. Make sure your editor is configured proper
 
 ### JADE
 
+#### Avoid Unnecessary Markup
 Components containers should usually be generic div's. This way they are more flexible to be contained in an element that will provide further semantic meaning depending on how they are used. No need to be explicit with div so lead with the components class name. Let the caller of the component figure out what the semantics are. Dont wrap components in things like `section` or `aside`. Where it makes sense use elements like `header`s and `footer`s insde the component, but not just for the sake of it.
 
 **Bad**
@@ -36,7 +37,28 @@ Components containers should usually be generic div's. This way they are more fl
         p.more
             a(href="#") Read More
         
-Be sparse with your tags. Light markup is the key to eternal hapiiness
+Be sparse with your tags. At the same time, use common sense. Don't over condense
+
+#### Structure Vs. Semantic
+Don't mix structural containers (grid elements) and semantic ones. Also, grid classes should never have additional classes to be used as "hooks"
+
+**Very Bad**
+
+    aside.my-cool-component.col-lg-4
+
+**Bad**
+
+    aside.col-lg-4
+    .col-lg-4.right-column
+    .col-lg-8.main-content
+
+**Good**
+
+    .col-lg-4
+        aside.my-cool-component
+  
+    .col-lg-8
+        main
 
 ### SASS
 
@@ -65,10 +87,6 @@ As much as possible, use parent containers to hook into child elements.
         span.meta ... 
         p ...
 
-#### Compass
-Use the compass utility to make any declarations that require vendor prefixes. This allows us to keep the prefixes up to date as we update compass.
-#### Breakpoint
-All media specific declarations should be made using breakpoint. *Most* declarations should use a global SASS variable like `$screen-large` or `$screen-medium`. Occasionally you will need to declare non standard breaks to accomodate a specific scenario but should otherwise be avoided
 #### Nesting
 Don't go overboard with SASS nesting. It leads to inefficient, bloated and more difficultly overridden code. Component specific styles should however always be namespaces in their component by nesting them in the component container.
 
@@ -124,26 +142,29 @@ Don't go overboard with SASS nesting. It leads to inefficient, bloated and more 
         a{color:green;}
     }
     
-#### Structure Vs. Semantic
-Don't mix structural containers (grid elements) and semantic ones. Also, grid classes should never have additional classes to be used as "hooks"
 
-**Very Bad**
-
-    aside.my-cool-component.col-lg-4
+#### Don't Hack the grid! (or any utility classes really)
+Avoid hacking the grid or any other general purpose utility classes for a specific case. This leads to a lot of fragmentation and lack of clarity for other developers that may later need to work on that component. You should also avoid css declarations that have dependancies on a particular grid structure so if you have a grid class in your custom scss, you will probably want to evaluate if there is a better way to do it.
 
 **Bad**
 
-    aside.col-lg-4
-    .col-lg-4.right-column
-    .col-lg-8.main-content
-
+    aside.callout{
+        .col-lg-6{
+            width: 65%;
+            padding-top: 50px;
+        }
+    }
+    
 **Good**
 
-    .col-lg-4
-        aside.my-cool-component
-  
-    .col-lg-8
-        main
+    aside.callout{
+        .my-sweet-container{
+            @extend .col-lg-6;
+            width: 65%;
+            padding-top: 50px;
+        }
+    }
+
 
 ### JavaScript
 #### Naming Conventions
@@ -173,18 +194,6 @@ TODO: Provide references to jQuery performance best practices (even better show 
 
 `$(‘.foo’)` vs `$(‘.foo’).eq(0)` vs $`(‘.foo:first’)`
 
-### Browser Testing and Support
-All code developed for the front end production should be developed for and tested with the following device/OS/browser combinations. This is just a baseline and may change from project to project
 
-Mac/OSX/Chrome, Firefox, Safari(6.x *)
-
-iPhone 4s/iOS 7/Safari  
-iPad 4/iOS 6/Safari  
-Samsung/Android 4.3/Galaxy S4
-
-PC/Windows 8/IE10  
-PC/Windows 7/Chrome, Firefox, IE9
-
--All browsers and OS except where specified are latest non beta release
 
 
